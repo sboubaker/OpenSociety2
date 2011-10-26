@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="content">
+            <f:view>
+               
+                <h:form>
+                     <h:messages style="color:red" />
+                    <h3><h:outputText value="Create/Edit"/></h3>
+                    <h:panelGrid columns="3">
+                        <h:outputLabel value="Username:" for="username" />
+                        <h:inputText id="username" value="#{userManagedBean.user.username}" title="Username" />
+                        <h:message for="username" style="color:red" />
+                        <h:outputLabel value="Password:" for="password" />
+                        <h:inputText id="password" value="#{userManagedBean.user.password}" title="Password" />
+                        <h:message for="password" style="color:red" />
+                        <h:outputLabel value="Email:" for="email" />
+                        <h:inputText id="email" value="#{userManagedBean.user.email}" title="Email" />
+                        <h:message for="email" style="color:red" />
+                        <h:outputLabel value="Phone:" for="phone" />
+                        <h:inputText id="phone" value="#{userManagedBean.user.phone}" title="Phone" />
+                        <h:message for="phone" style="color:red" />
+                        <h:outputLabel value="Mobile:" for="mobile" />
+                        <h:inputText id="mobile" value="#{userManagedBean.user.mobile}" title="Mobile" />
+                        <h:message for="mobile" style="color:red" />
+                        <h:outputLabel value="Firstname:" for="firstname" />
+                        <h:inputText id="firstname" value="#{userManagedBean.user.firstname}" title="Firstname" />
+                        <h:message for="firstname" style="color:red" />
+                        <h:outputLabel value="Lastname:" for="lastname" />
+                        <h:inputText id="lastname" value="#{userManagedBean.user.lastname}" title="Lastname" />
+                        <h:message for="lastname" style="color:red" />
+                        <h:outputLabel value="Isactive:" for="isactive" />
+                        <h:inputText id="isactive" value="#{userManagedBean.user.isactive}" title="Isactive" />
+                        <h:message for="isactive" style="color:red" />
+                        <h:outputLabel value="IdRole:" for="idRole" />
+                        <h:selectOneMenu id="idRole" value="#{userManagedBean.user.idRole}" title="IdRole" >
+                            <f:converter converterId="roleConverter" />
+                            <f:selectItems var="role" value="#{userManagedBean.roles}" itemLabel="#{role.name}"/>
+                        </h:selectOneMenu>
+                        <h:message for="idRole" style="color:red" />
+                    </h:panelGrid>
+                    <h:commandButton action="#{userManagedBean.persistUser()}" value="Save"/>
+                </h:form>
+            </f:view>
+
+        </ui:define>
+
+    </ui:composition>
+</html>
