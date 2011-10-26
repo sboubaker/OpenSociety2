@@ -10,38 +10,35 @@
         <title>OpenSociety</title>
     </h:head>
     <h:body>
-        <f:view>
-            <h:form>
 
-                <p:layout fullPage="true">
 
-                    <p:layoutUnit position="top" height="75" header="Top" resizable="true" closable="true" collapsible="true">
-                    </p:layoutUnit>
+        <p:layout fullPage="true">
 
-                    <p:layoutUnit position="bottom" height="75" header="Bottom" resizable="true" closable="true" collapsible="true">
+            <p:layoutUnit position="top" height="75" header="Top" resizable="true" closable="true" collapsible="true">
+            </p:layoutUnit>
 
-                    </p:layoutUnit>
+            <p:layoutUnit position="bottom" height="75" header="Bottom" resizable="true" closable="true" collapsible="true">
 
-                    <p:layoutUnit position="left" width="200" header="Panel" resizable="true" closable="true" collapsible="true">
-                        <p:panel header="Administration">  
-                            <h:link outcome="userForm" value="Create User"/><br/>
-                            <h:link outcome="userList" value="Users"/>
-                        </p:panel>
-                        
-                    </p:layoutUnit>
+            </p:layoutUnit>
 
-                    <p:layoutUnit position="right" width="200" header="Right" resizable="true" closable="true" collapsible="true">
+            <p:layoutUnit position="left" width="200" header="Panel" resizable="true" closable="true" collapsible="true">
+                <p:panel header="Administration">  
+                    <h:link outcome="userForm" value="Create User"/><br/>
+                    <h:link outcome="userList" value="Users"/>
+                </p:panel>
 
-                    </p:layoutUnit>
+            </p:layoutUnit>
 
-                    <p:layoutUnit position="center">
-                        <ui:insert name="content">
-                            
-                        </ui:insert>
-                    </p:layoutUnit>
+            <p:layoutUnit position="right" width="200" header="Right" resizable="true" closable="true" collapsible="true">
 
-                </p:layout>
-            </h:form>
-        </f:view>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="content">
+
+                </ui:insert>
+            </p:layoutUnit>
+
+        </p:layout>
     </h:body>
 </html>
