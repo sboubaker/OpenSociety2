@@ -10,120 +10,124 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="content">
 
-            <f:view>
-                <h:form>
-                    <h3><h:outputText value="Users"/></h3>
-                    <p:dataTable value="#{userManagedBean.users}" var="item"
-                                 paginator="true" rows="10"  
-                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
-                                 rowsPerPageTemplate="5,10,15"
-                                 selection="#{userManagedBean.user}" selectionMode="single"  
-                                 onRowSelectUpdate="display" onRowSelectComplete="userDialog.show()"
-                                 >
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText  value="Username"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.username}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText  value="Password"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.password}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="Email"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.email}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="Phone"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.phone}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="Mobile"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.mobile}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="Firstname"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.firstname}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="Lastname"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.lastname}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="Isactive"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.isactive}"/>
-                        </p:column>
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="IdRole"/>
-                            </f:facet>
-                            <h:outputText style="font-size: 12px;" value="#{item.idRole.name}"/>
-                        </p:column>
+
+            <h:form>
+                <h3><h:outputText value="Users"/></h3>
+                <p:dataTable value="#{userManagedBean.users}" var="item"
+                             paginator="true" rows="10"  
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                             rowsPerPageTemplate="5,10,15"
+                             selection="#{userManagedBean.user}" selectionMode="single"  
+                             onRowSelectUpdate="display" onRowSelectComplete="userDialog.show()"
+                             >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText  value="Username"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.username}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText  value="Password"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.password}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Email"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.email}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Phone"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.phone}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Mobile"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.mobile}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Firstname"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.firstname}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Lastname"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.lastname}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Isactive"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.isactive}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdRole"/>
+                        </f:facet>
+                        <h:outputText style="font-size: 12px;" value="#{item.idRole.name}"/>
+                    </p:column>
 
 
 
-                    </p:dataTable>
-                    <p:dialog header="User Detail" widgetVar="userDialog" resizable="false"  
-                              width="350" showEffect="explode" hideEffect="explode">  
+                </p:dataTable>
+                <p:dialog header="User Detail" widgetVar="userDialog" resizable="false"  
+                          width="350" showEffect="explode" hideEffect="explode">  
 
-                        <h:panelGrid id="display" columns="2" cellpadding="4">  
+                    <h:panelGrid id="display" columns="2" cellpadding="4">  
 
-                            <h:outputText value="Firstname:" />  
-                            <h:outputText value="#{userManagedBean.user.username}" />  
+                        <h:outputText value="Firstname:" />  
+                        <h:outputText value="#{userManagedBean.user.username}" />  
 
-                            <h:outputText value="Password" />  
-                            <h:outputText value="#{userManagedBean.user.password}" />  
+                        <h:outputText value="Password" />  
+                        <h:outputText value="#{userManagedBean.user.password}" />  
 
-                            <h:outputText value="Email" />  
-                            <h:outputText value="#{userManagedBean.user.email}" />  
+                        <h:outputText value="Email" />  
+                        <h:outputText value="#{userManagedBean.user.email}" />  
 
-                            <h:outputText value="Phone" />  
-                            <h:outputText value="#{userManagedBean.user.phone}" />
+                        <h:outputText value="Phone" />  
+                        <h:outputText value="#{userManagedBean.user.phone}" />
 
-                            <h:outputText value="Mobile" />  
-                            <h:outputText value="#{userManagedBean.user.mobile}" />
+                        <h:outputText value="Mobile" />  
+                        <h:outputText value="#{userManagedBean.user.mobile}" />
 
-                            <h:outputText value="Firstname" />  
-                            <h:outputText value="#{userManagedBean.user.firstname}" />
+                        <h:outputText value="Firstname" />  
+                        <h:outputText value="#{userManagedBean.user.firstname}" />
 
-                            <h:outputText value="Lastname" />  
-                            <h:outputText value="#{userManagedBean.user.lastname}" />
+                        <h:outputText value="Lastname" />  
+                        <h:outputText value="#{userManagedBean.user.lastname}" />
 
-                            <h:outputText value="Isactive" />  
-                            <h:outputText value="#{userManagedBean.user.isactive}" />
+                        <h:outputText value="Isactive" />  
+                        <h:outputText value="#{userManagedBean.user.isactive}" />
 
-                            <h:outputText value="Dtmodif" />  
-                            <h:outputText value="#{userManagedBean.user.dtmodif}" />
+                        <h:outputText value="Dtmodif" />  
+                        <h:outputText value="#{userManagedBean.user.dtmodif}" />
 
-                            <h:outputText value="DtCreate" />  
-                            <h:outputText value="#{userManagedBean.user.dtcreate}" />
+                        <h:outputText value="DtCreate" />  
+                        <h:outputText value="#{userManagedBean.user.dtcreate}" />
 
-                            <h:outputText value="Role" />  
-                            <h:outputText value="#{userManagedBean.user.idRole.name}" />
+                        <h:outputText value="Role" />  
+                        <h:outputText value="#{userManagedBean.user.idRole.name}" />
 
 
-                        </h:panelGrid>
-                        <h:button outcome="updateUser"  value="update"/>
-                    </p:dialog> 
-                </h:form>
-            </f:view>
+                    </h:panelGrid>
+                    <h:button outcome="updateUser"  value="update"/>
+                </p:dialog> 
+            </h:form>
+
 
         </ui:define>
-
+        <ui:define name="header">
+            <h:form>
+                <h:commandButton action="#{authBean.logout}" value="Logout" />
+            </h:form>
+        </ui:define>
     </ui:composition>
 </html>

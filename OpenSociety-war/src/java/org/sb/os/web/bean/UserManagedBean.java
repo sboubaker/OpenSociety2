@@ -49,7 +49,7 @@ public class UserManagedBean implements Serializable {
         return userBean.getUsers();
     }
     //webflow actions
-
+    
     public String persistUser() {
         if (user.getDtcreate() == null) {
             user.setDtcreate(new Date());

@@ -3,17 +3,17 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
->
+      >
     <h:head>
         <title>OpenSociety</title>
     </h:head>
     <h:body>
-        <form action="j_security_check" method="POST">
-            <label>Username:</label>
-            <input name="j_username"/>
-            <label>Password:</label>
-            <input name="j_password"/>
-            <div><input type="submit" value="login"/></div>
+        <form method="POST" action="j_security_check">
+            <table>
+                <tr><td>User name:</td><td><input type="text" name="j_username" /></td></tr>
+                <tr><td>Password:</td><td><input type="password" name="j_password" /></td></tr>
+                <tr><td><input type="submit" value="Login" /></td><td></td></tr>
+            </table>
         </form>
     </h:body>
 </html>

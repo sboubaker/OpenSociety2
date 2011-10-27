@@ -7,10 +7,10 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <ui:composition template="/template.xhtml">
         <ui:define name="content">
-            <f:view>
-               
+            
+
                 <h:form>
-                     <h:messages style="color:red" />
+                    <h:messages style="color:red" />
                     <h3><h:outputText value="Create/Edit"/></h3>
                     <h:panelGrid columns="3">
                         <h:outputLabel value="Username:" for="username" />
@@ -46,9 +46,13 @@
                     </h:panelGrid>
                     <h:commandButton action="#{userManagedBean.persistUser()}" value="Save"/>
                 </h:form>
-            </f:view>
+           
 
         </ui:define>
-
+        <ui:define name="header">
+            <h:form>
+            <h:commandButton action="#{authBean.logout}" value="Logout" />
+            </h:form>
+        </ui:define>
     </ui:composition>
 </html>
