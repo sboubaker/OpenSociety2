@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:form>
+        <c:if test="#{secBean.isAuthenticated()}">
+            <p:menu style="width: 98%;">
+                
+                <c:if test='#{secBean.hasRole("ADMIN")}'>
+                    <p:submenu label="Administration">  
+                        <p:menuitem value="New User"  url="/faces/admin/userForm.xhtml"/>  
+                        <p:menuitem value="User List" url="/faces/admin/userList.xhtml"/>  
+                    </p:submenu> 
+                </c:if>
+                
+            </p:menu>
+        </c:if>
+    </h:form>
+
+</html>
